@@ -1,0 +1,247 @@
+header {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #000;
+  z-index: 500;
+  display: flex;
+  padding: 1% 0;
+}
+.header .header__content {
+  display: inline-flex;
+  padding: 1% 35px;
+  width: 100%;
+  align-items: center;
+  color: #fff;
+}
+.header .header__content .header__logo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.header .header__content .header__logo svg {
+  fill: #fff;
+  width: 50px;
+  margin-bottom: 10px;
+}
+.header .header__content .header__logo h2 {
+  font-size: 1.5rem;
+  font-family: "Noto Sans";
+  margin: 0;
+}
+.header .header__content .header__nav .header__menu {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.header .header__content .header__nav .header__menu .header__item {
+  list-style-type: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.header .header__content .header__nav .header__menu .header__item .header__link {
+  all: unset;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.header .header__content .header__nav .header__menu .header__item .header__link:hover {
+  color: rgb(222, 67, 72);
+}
+.header .header__content .header__acc {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.header .header__content .header__acc .header__admin {
+  border-radius: 50%;
+  display: flex;
+  padding: 9px;
+  transition: all 0.3s ease-in-out;
+}
+.header .header__content .header__acc .header__admin svg {
+  width: 28px;
+  transition: all 0.3s ease-in-out;
+}
+.header .header__content .header__acc .header__admin:hover {
+  background-color: #fff;
+}
+.header .header__content .header__acc .header__admin:hover svg {
+  fill: #000;
+}
+
+.home__hero {
+  background-color: rgb(222, 67, 72);
+  color: #fff;
+  background-position: center;
+  height: 100vh;
+  min-height: 55rem;
+  max-height: 120rem;
+  position: relative;
+}
+.home__hero .home__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.home__hero .home__content .home__title {
+  text-transform: uppercase;
+  font-family: "Noto Sans";
+  font-size: 3.2rem;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 0;
+}
+.home__hero .home__content .home__info {
+  width: 80%;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.home__hero .home__content .home__button {
+  all: unset;
+  cursor: pointer;
+  width: 15%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.home__hero .home__content .home__button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.reserva {
+  display: flex;
+}
+.reserva .reserva__fecha {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.reserva .reserva__fecha .reserva__fecha-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.reserva .reserva__fecha .reserva__fecha-title h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.reserva .reserva__fecha .calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 280px;
+}
+.reserva .reserva__fecha .calendar .day {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.reserva .reserva__fecha .calendar .selected {
+  border: 2px solid red !important;
+}
+.reserva .reserva__hora {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.reserva .reserva__hora .reserva__hora-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.reserva .reserva__hora .reserva__hora-title h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.reserva .reserva__hora .hours {
+  margin-top: 20px;
+  display: none;
+}
+
+.selected {
+  border: 2px solid rgb(222, 67, 72) !important;
+}
+
+.button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  background: #007bff;
+  color: white;
+}
+
+.button:hover {
+  background: #0056b3;
+}
+
+.selected-hour {
+  background: rgb(222, 67, 72) !important;
+}
+
+.hours, .mesa-selection, .comensales-section, .form-section {
+  display: none;
+}
+
+.mesas {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.mesa {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mesa.selected {
+  border-color: rgb(222, 67, 72);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans 3";
+}
+
+strong {
+  font-weight: 900;
+}/*# sourceMappingURL=style.css.map */

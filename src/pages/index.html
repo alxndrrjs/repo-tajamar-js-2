@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wara Wara</title>
 
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+    
 
+
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,7 +27,6 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="../assets/img/icon/wara-wara-icon.svg" type="image/x-icon">
 
-    <script src="../js/script.js"></script>
 </head>
 
 <body>
@@ -86,49 +91,39 @@
             </div>
             <div id="calendar" class="calendar">
 
+    <section id="reserva" class="reserva">
+        <h1>Reserva Restaurante</h1>
+
+        <div id="seccion1">
+        <h2>Seleccione fecha y horario</h2>
+            <div id="calendario"></div> <!-- Calendario -->
+            <div id="horariosDisponibles" class="hidden">
+                <h3>Selecciona la hora:</h3>
+                <div id="horarios"></div>
+                <button id="siguienteHorario" class="hidden">Siguiente</button>
             </div>
         </div>
-        <div class="reserva__hora" id="hours">
-            <div class="reserva__hora-title">
-                <h2>
-                    <img src="" alt="">
-                    Hora
-                </h2>
-                <span>
-                    Selecciona la hora,
-                    ¡tu experiencia comienza cuando tú decidas!
-                </span>
-            </div>
-            <ul id="hourList"></ul>
+
+        <div id="seccion2" class="hidden">
+            <h2>Seleccione mesa y número de comensales</h2>
+            <div id="mesasDisponibles"></div>
+            <label for="numComensales">Número de comensales:</label>
+            <input type="number" id="numComensales" min="1" max="4">
+            <button id="siguienteMesa" class="hidden">Siguiente</button>
         </div>
-    </section>
-    <section>
-        <div class="mesas">
-            <div class="mesa-selection" id="mesaSelection">
-                <h3>Selecciona una mesa</h3>
-                <div class="mesas">
-                    <div class="mesa" data-capacidad="2">2</div>
-                    <div class="mesa" data-capacidad="2">2</div>
-                    <div class="mesa" data-capacidad="4">4</div>
-                    <div class="mesa" data-capacidad="4">4</div>
-                </div>
-            </div>
-            <div class="comensales-section" id="comensalesSection">
-                <h3>Número de comensales</h3>
-                <input type="number" id="numComensales" min="1" max="4">
-                <p id="errorMensaje" style="color:red; display:none;">Número de comensales no permitido para la mesa
-                    seleccionada.</p>
-                <button class="button" onclick="validarComensales()">Confirmar Comensales</button>
-            </div>
-        </div>
-        <div class="form-section" id="formSection">
-            <h3>Datos de Reserva</h3>
-            <input type="text" id="nombre" placeholder="Nombre"><br>
-            <input type="email" id="correo" placeholder="Correo"><br>
-            <input type="tel" id="telefono" placeholder="Teléfono"><br>
-            <button class="button" onclick="confirmarReserva()">Confirmar Reserva</button>
+
+        <div id="seccion3" class="hidden">
+            <h2>Ingrese sus datos personales</h2>
+            <form id="formReserva">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <input type="tel" id="telefono" placeholder="Teléfono" required>
+                <button type="submit">Finalizar reserva</button>
+            </form>
         </div>
     </section>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

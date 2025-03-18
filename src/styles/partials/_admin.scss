@@ -1,0 +1,26 @@
+.admin {
+    min-height: 60rem;
+    position: relative;
+    background: radial-gradient(#99784A 0%, #E9AB57 33%, #FFC77C 65%);
+    text-align: center;
+    .container {
+        position: absolute;
+        width: 60%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        td {
+            background-color: white;
+        }
+
+    }
+}
+.mesa.ocupada {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.mesa.selected {
+    background-color: #80E1F3;
+}

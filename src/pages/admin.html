@@ -1,39 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración de Reservas</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .container { width: 60%; margin: auto; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
-        th { background: #007bff; color: white; }
-        .button { padding: 5px 10px; cursor: pointer; border: none; background: red; color: white; }
-        .button:hover { background: darkred; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Reservas Restaurante</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
 
-    <script src="../js/script.js"></script>
+
 </head>
 <body>
-    <h2>Administración de Reservas</h2>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Mesa</th>
-                    <th>Comensales</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody id="reservasTable"></tbody>
-        </table>
-    </div>
+  <h1>Reservas del Restaurante</h1>
+  
+  <label for="fechaFiltro">Filtrar por fecha:</label>
+  <input type="date" id="fechaFiltro">
+  <button id="filtrarBtn">Filtrar</button>
+
+  <table id="tablaReservas">
+    <thead>
+      <tr>
+        <th>Fecha y Hora</th>
+        <th>Mesa</th>
+        <th>Comensales</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Las reservas se agregarán aquí dinámicamente -->
+    </tbody>
+  </table>
+
+  <!-- Primero carga jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Después carga jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+    function cargarReservas() {
+    const reservas = JSON.parse(localStorage.getItem('reservas')) || {};
+    const fechaFiltro = document.getElementById('fechaFiltro').value;
+
+    console.log(fechaFiltro);
+
+    let reservasFiltradas = Object.values(reservas);
+
+    if (fechaFiltro) {
+        reservasFiltradas = reservasFiltradas.filter(reserva => reserva.fechaHora.includes(fechaFiltro));
+    }
+
+    const tablaBody = document.querySelector('#tablaReservas tbody');
+    tablaBody.innerHTML = '';
+
+    reservasFiltradas.forEach(reserva => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+        <td>${reserva.fechaHora}</td>
+        <td>Mesa ${reserva.mesa}</td>
+        <td>${reserva.numComensales}</td>
+        <td>${reserva.nombre}</td>
+        <td>${reserva.email}</td>
+        <td>${reserva.telefono}</td>
+        `;
+        tablaBody.appendChild(row);
+    });
+    }
+
+    // Filtrar reservas al hacer clic en el botón
+    document.getElementById('filtrarBtn').addEventListener('click', cargarReservas);
+
+    // Cargar las reservas al cargar la página
+    window.onload = cargarReservas;
+  </script>
 </body>
 </html>

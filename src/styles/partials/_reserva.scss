@@ -18,23 +18,27 @@
             }
         }
 
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr); 
-            gap: 5px; 
-            width: 280px;
-
-            .day { 
-                padding: 10px; 
-                text-align: center; 
-                border: 1px solid #ccc; 
-                cursor: pointer;
-
-            }
-
-            .selected { 
-                border: 2px solid red !important; 
-            }
+        .ui-datepicker {
+            font-size: 16px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+            .ui-datepicker-header {
+            background: #FFC77C;
+            color: white;
+            font-size: 18px;
+        }
+            .ui-datepicker-calendar th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+            .ui-datepicker td {
+            text-align: center;
+            padding: 5px;
+        }
+            .ui-datepicker .ui-datepicker-buttonpane {
+            background-color: #f9f9f9;
         }
     }
 
@@ -55,18 +59,106 @@
             }
         }
 
-        .hours { 
-            margin-top: 20px; 
-            display: none; 
-        }
+        .horario {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+          }
+      
+          .horario-ocupado {
+            background-color: #dc3545;
+            cursor: not-allowed;
+          }
+      
+          .horario-reservado {
+            background-color: #ffc107;
+            cursor: not-allowed;
+          }
     }
 }
 
-.selected { border: 2px solid $color-selected !important; }
-.button { padding: 10px; margin: 5px; cursor: pointer; border: none; background: #007bff; color: white; }
-.button:hover { background: #0056b3; }
-.selected-hour { background: $color-selected !important; }
-.hours, .mesa-selection, .comensales-section, .form-section { display: none; }
-.mesas { display: flex; justify-content: center; gap: 15px; }
-.mesa { width: 50px; height: 50px; border: 2px solid #333; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-.mesa.selected { border-color: $color-selected; }
+.ui-datepicker {
+    font-size: 16px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .ui-datepicker-header {
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+  }
+  .ui-datepicker-calendar th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+  }
+  .ui-datepicker td {
+    text-align: center;
+    padding: 5px;
+  }
+  .ui-datepicker .ui-datepicker-buttonpane {
+    background-color: #f9f9f9;
+  }
+
+  /* Estilos para los botones de horarios */
+  .horario {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .horario-ocupado {
+    background-color: #dc3545;
+    cursor: not-allowed;
+  }
+
+  .horario-reservado {
+    background-color: #ffc107;
+    cursor: not-allowed;
+  }
+
+  /* Estilos para el formulario */
+  .formulario {
+    margin-top: 20px;
+  }
+
+  .formulario input, .formulario select {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  /* Mesas visualización */
+  .mesa {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #28a745;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .mesa-ocupada {
+    background-color: #dc3545;
+    cursor: not-allowed;
+  }
+
+  .mesa-reservada {
+    background-color: #ffc107;
+  }
+
+  .hidden {
+    display: none;
+  }

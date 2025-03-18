@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Reservas</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 60%; margin: auto; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background: #007bff; color: white; }
+        .button { padding: 5px 10px; cursor: pointer; border: none; background: red; color: white; }
+        .button:hover { background: darkred; }
+    </style>
+
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <h2>Administración de Reservas</h2>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Mesa</th>
+                    <th>Comensales</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="reservasTable"></tbody>
+        </table>
+    </div>
+</body>
+</html>

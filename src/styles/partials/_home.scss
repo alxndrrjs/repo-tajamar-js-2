@@ -1,0 +1,60 @@
+.home__hero{
+    background-color: $home__background;
+    color: $home-color;
+    background-position: center;
+    height: 100vh;
+    min-height: 55rem;
+    max-height: 120rem;
+    position: relative;
+
+    .home__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90rem;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+
+        .home__title {
+            text-transform: uppercase;
+            font-family: $font__noto;
+            font-size: $home__title-font__size;
+            letter-spacing: 3px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .home__info {
+            width: 80%;
+            font-size: 1.6rem;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 2rem;
+        }
+
+        .home__button {
+            @include links__header;
+            width: 15%;
+            background-color: $header__background;
+            color: $header__color;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin: 0 auto;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: $header__color;
+                color: #000;
+            }
+        }
+
+    }
+}

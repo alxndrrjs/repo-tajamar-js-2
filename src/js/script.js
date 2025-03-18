@@ -1,21 +1,26 @@
+
+// #region Global Vars
+// Variables globales
 let fechaSeleccionada, horaSeleccionada, mesaSeleccionada, numComensales;
 
-$(function() {
+// #region Calendar config
+$(function () {
   // Configuración del calendario
   $("#calendario").datepicker({
     inline: true,
     dateFormat: 'yy-mm-dd',
-    onSelect: function(dateText) {
+    onSelect: function (dateText) {
       fechaSeleccionada = dateText;
       mostrarHorarios(fechaSeleccionada);
     }
   });
 
+  // #region renderHorarios
   // Función para mostrar horarios disponibles
   function mostrarHorarios(fecha) {
     const horariosDisponibles = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
     const reservas = JSON.parse(localStorage.getItem('reservas')) || {};
-    
+
     $('#horarios').html('');
     horariosDisponibles.forEach(hora => {
       const clave = `${fecha} ${hora}`;
@@ -23,7 +28,7 @@ $(function() {
         .text(hora)
         .prop('disabled', reservas[clave])  // Deshabilita los horarios ocupados
         .addClass(reservas[clave] ? 'horario-reservado' : '')
-        .click(function() {
+        .click(function () {
           horaSeleccionada = hora;
           $('#horariosDisponibles').hide();
           mostrarMesas();
@@ -35,6 +40,7 @@ $(function() {
     $('#horariosDisponibles').removeClass('hidden');
   }
 
+  // #region renderTables
   // Función para mostrar las mesas disponibles
   function mostrarMesas() {
     const mesas = [
@@ -44,22 +50,29 @@ $(function() {
       { id: 4, capacidad: 4 }
     ];
 
+    // 
     const reservas = JSON.parse(localStorage.getItem('reservas')) || {};
     $('#mesasDisponibles').html('');
-    
+
     mesas.forEach(mesa => {
       const clave = `${fechaSeleccionada} ${horaSeleccionada} mesa ${mesa.id}`;
       const mesaBtn = $('<div class="mesa">')
         .text(`Mesa ${mesa.id}`)
         .addClass(reservas[clave] ? 'mesa-ocupada' : '')
-        .click(function() {
-          if (!reservas[clave]) {
-            mesaSeleccionada = mesa.id;
-            $('#mesasDisponibles .mesa').removeClass('selected');
-            $(this).addClass('selected');
-            $('#numComensales').prop('disabled', false);
-            $('#siguienteMesa').removeClass('hidden');
+        .click(function () {
+
+          // Si la mesa ya está ocupada (reservada), no hacer nada
+          if (reservas[clave]) {
+            alert('Esta mesa ya está reservada.');
+            return; // Sale de la función sin hacer nada
           }
+
+          mesaSeleccionada = mesa.id;
+          $('#mesasDisponibles .mesa').removeClass('selected');
+          $(this).addClass('selected');
+          $('#numComensales').prop('disabled', false);
+          $('#siguienteMesa').removeClass('hidden');
+
         });
 
       $('#mesasDisponibles').append(mesaBtn);
@@ -69,8 +82,9 @@ $(function() {
     $('#seccion2').removeClass('hidden');
   }
 
+  // #region Comensales
   // Validación de comensales
-  $('#numComensales').on('input', function() {
+  $('#numComensales').on('input', function () {
     const num = $(this).val();
     if ((mesaSeleccionada === 1 || mesaSeleccionada === 2) && num > 2) {
       alert('Número de comensales no válido para esta mesa');
@@ -86,14 +100,15 @@ $(function() {
   });
 
   // Función para almacenar los datos y avanzar
-  $('#siguienteMesa').click(function() {
+  $('#siguienteMesa').click(function () {
     numComensales = $('#numComensales').val();
     $('#seccion2').hide();
     $('#seccion3').removeClass('hidden');
   });
 
+  // #region FinishReserve
   // Finalizar reserva
-  $('#formReserva').submit(function(e) {
+  $('#formReserva').submit(function (e) {
     e.preventDefault();
 
     const nombre = $('#nombre').val();

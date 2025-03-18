@@ -6,35 +6,35 @@ header {
 .header {
     position: fixed;
     width: 100%;
-    background-color: $header__background;
     z-index:500;
     display: flex;
-    padding: 1% 0;
+    justify-content: center;
+    
 
     .header__content {
+        width: 1180px;
+
         display: inline-flex;
-        padding: 1% 35px;
-        width: 100%;
+        justify-content: space-between;
         align-items: center;
+
+        padding: 1rem 2rem;
+        border-radius: $border-radius_header;
+        margin-top: 1.5rem;
+
         color: $header__color;
+        background-color: $color_primary;
+        @include input_shadow;
 
         .header__logo {
             display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
+            width: 92px;
             
-            svg {
-                fill: $header__color;
-                width: 50px;
-                margin-bottom: 10px;
-            }
-
-            h2 {
-                font-size: $header__logo-font__size;
-                font-family: $font__noto;
-                margin: 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
             }
         }
 
@@ -48,24 +48,31 @@ header {
 
                 .header__item {
                     list-style-type: none;
-                    font-size: $header__item-font__size;
-                    text-transform: uppercase;
-                    font-weight: 600;
+                    @include header_link;
+                    padding: 0 2rem;
 
                     .header__link {
                         @include links__header;
                         transition: color 0.3s ease-in-out;
 
                         &:hover {
-                            color: $header__link-color__hover;  
+                            color: $color_black;  
                         }
+                    }
+
+                    &.active {
+                        color: white;
+                    }
+
+                    
+                    &.disble {
+                        color: $color_disable
                     }
                 }
             }
         }
 
         .header__acc {
-            width: 100%;
             display: flex;
             justify-content: flex-end;
 
@@ -75,14 +82,14 @@ header {
                 padding: 9px;
                 transition: all .3s ease-in-out;
                 svg {
-                    width: 28px;
+                    width: 40px;
                     transition: all .3s ease-in-out;
                 }
 
                 &:hover {
-                    background-color: $header__color;
-                    svg {
-                        fill: $header__background;
+                    
+                    svg path{
+                        fill: $color_black;
                     }
                 }
             }

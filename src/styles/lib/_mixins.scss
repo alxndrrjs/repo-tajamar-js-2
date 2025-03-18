@@ -2,3 +2,19 @@
     all: unset;
     cursor: pointer;
 }
+
+@mixin input_shadow {
+    box-shadow: 0 4px 4px rgba($color: #772B0E, $alpha: .25);
+}
+
+@mixin h1_desktop {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 72px;
+}
+
+@mixin header_link {
+    font-family: 'Oswald', sans-serif;
+    font-weight: medium;
+    font-size: 32px;
+}

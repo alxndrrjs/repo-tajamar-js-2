@@ -6,34 +6,33 @@ header {
 .header {
   position: fixed;
   width: 100%;
-  background-color: #000;
   z-index: 500;
   display: flex;
-  padding: 1% 0;
+  justify-content: center;
 }
 .header .header__content {
+  width: 1180px;
   display: inline-flex;
-  padding: 1% 35px;
-  width: 100%;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 36px;
+  margin-top: 1.5rem;
   color: #fff;
+  background-color: #EC4826;
+  box-shadow: 0 4px 4px rgba(119, 43, 14, 0.25);
 }
 .header .header__content .header__logo {
   display: flex;
+  width: 92px;
+}
+.header .header__content .header__logo img {
   width: 100%;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-}
-.header .header__content .header__logo svg {
-  fill: #fff;
-  width: 50px;
-  margin-bottom: 10px;
-}
-.header .header__content .header__logo h2 {
-  font-size: 1.5rem;
-  font-family: "Noto Sans";
-  margin: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
 }
 .header .header__content .header__nav .header__menu {
   display: flex;
@@ -44,9 +43,10 @@ header {
 }
 .header .header__content .header__nav .header__menu .header__item {
   list-style-type: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium;
+  font-size: 32px;
+  padding: 0 2rem;
 }
 .header .header__content .header__nav .header__menu .header__item .header__link {
   all: unset;
@@ -54,10 +54,15 @@ header {
   transition: color 0.3s ease-in-out;
 }
 .header .header__content .header__nav .header__menu .header__item .header__link:hover {
-  color: rgb(222, 67, 72);
+  color: #0f0f0f;
+}
+.header .header__content .header__nav .header__menu .header__item.active {
+  color: white;
+}
+.header .header__content .header__nav .header__menu .header__item.disble {
+  color: #EAB5A1;
 }
 .header .header__content .header__acc {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -68,18 +73,15 @@ header {
   transition: all 0.3s ease-in-out;
 }
 .header .header__content .header__acc .header__admin svg {
-  width: 28px;
+  width: 40px;
   transition: all 0.3s ease-in-out;
 }
-.header .header__content .header__acc .header__admin:hover {
-  background-color: #fff;
-}
-.header .header__content .header__acc .header__admin:hover svg {
-  fill: #000;
+.header .header__content .header__acc .header__admin:hover svg path {
+  fill: #0f0f0f;
 }
 
 .home__hero {
-  background-color: rgb(222, 67, 72);
+  background-image: radial-gradient(#99784A 0%, #E9AB57 33%, #FFC77C 65%);
   color: #fff;
   background-position: center;
   height: 100vh;

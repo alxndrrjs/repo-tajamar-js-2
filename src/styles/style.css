@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   display: block;
   unicode-bidi: isolate;
@@ -152,20 +153,27 @@ header {
   display: flex;
   align-items: center;
 }
-.reserva .reserva__fecha .calendar {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  width: 280px;
-}
-.reserva .reserva__fecha .calendar .day {
-  padding: 10px;
-  text-align: center;
+.reserva .reserva__fecha .ui-datepicker {
+  font-size: 16px;
+  background-color: #f5f5f5;
   border: 1px solid #ccc;
-  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.reserva .reserva__fecha .calendar .selected {
-  border: 2px solid red !important;
+.reserva .reserva__fecha .ui-datepicker-header {
+  background: #FFC77C;
+  color: white;
+  font-size: 18px;
+}
+.reserva .reserva__fecha .ui-datepicker-calendar th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+.reserva .reserva__fecha .ui-datepicker td {
+  text-align: center;
+  padding: 5px;
+}
+.reserva .reserva__fecha .ui-datepicker .ui-datepicker-buttonpane {
+  background-color: #f9f9f9;
 }
 .reserva .reserva__hora {
   display: flex;
@@ -182,54 +190,134 @@ header {
   display: flex;
   align-items: center;
 }
-.reserva .reserva__hora .hours {
-  margin-top: 20px;
-  display: none;
-}
-
-.selected {
-  border: 2px solid rgb(222, 67, 72) !important;
-}
-
-.button {
-  padding: 10px;
+.reserva .reserva__hora .horario {
+  display: inline-block;
+  padding: 10px 20px;
   margin: 5px;
-  cursor: pointer;
-  border: none;
-  background: #007bff;
+  background-color: #28a745;
   color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.reserva .reserva__hora .horario-ocupado {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+.reserva .reserva__hora .horario-reservado {
+  background-color: #ffc107;
+  cursor: not-allowed;
 }
 
-.button:hover {
-  background: #0056b3;
+.ui-datepicker {
+  font-size: 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.selected-hour {
-  background: rgb(222, 67, 72) !important;
+.ui-datepicker-header {
+  background-color: #007BFF;
+  color: white;
+  font-size: 18px;
 }
 
-.hours, .mesa-selection, .comensales-section, .form-section {
+.ui-datepicker-calendar th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.ui-datepicker td {
+  text-align: center;
+  padding: 5px;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-color: #f9f9f9;
+}
+
+/* Estilos para los botones de horarios */
+.horario {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.horario-ocupado {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.horario-reservado {
+  background-color: #ffc107;
+  cursor: not-allowed;
+}
+
+/* Estilos para el formulario */
+.formulario {
+  margin-top: 20px;
+}
+
+.formulario input, .formulario select {
+  padding: 8px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* Mesas visualización */
+.mesa {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #28a745;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mesa-ocupada {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.mesa-reservada {
+  background-color: #ffc107;
+}
+
+.hidden {
   display: none;
 }
 
-.mesas {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+.admin {
+  min-height: 60rem;
+  position: relative;
+  background: radial-gradient(#99784A 0%, #E9AB57 33%, #FFC77C 65%);
+  text-align: center;
+}
+.admin .container {
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.admin .container td {
+  background-color: white;
 }
 
-.mesa {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.mesa.ocupada {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .mesa.selected {
-  border-color: rgb(222, 67, 72);
+  background-color: #80E1F3;
 }
 
 html {

@@ -85,7 +85,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: radial-gradient(#99784A 0%, #E9AB57 33%, #FFC77C 65%);
+  background-image: radial-gradient(#7a5f37 0%, #E9AB57 33%, #FFC77C 65%);
   background-position: center;
   color: #fff;
 }

@@ -99,6 +99,7 @@ $(function () {
     }
   });
 
+  // #region saveData
   // Función para almacenar los datos y avanzar
   $('#siguienteMesa').click(function () {
     numComensales = $('#numComensales').val();

@@ -207,16 +207,41 @@
 
         </div>
 
+        
+
         <div id="seccion3" class="hidden">
-            <h2>Ingrese sus datos personales</h2>
-            <form id="formReserva">
-                <input type="text" id="nombre" placeholder="Nombre" required>
-                <input type="email" id="email" placeholder="Correo electrónico" required>
-                <input type="tel" id="telefono" placeholder="Teléfono" required>
-                <button type="submit">Finalizar reserva</button>
-            </form>
+            <div class="datos_top_text">
+                <div class="datos_title">
+                    <span class="icon_dato">
+                        <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 16.4999C18.9466 16.4999 21.3333 14.1133 21.3333 11.1666C21.3333 8.21992 18.9466 5.83325 16 5.83325C13.0533 5.83325 10.6666 8.21992 10.6666 11.1666C10.6666 14.1133 13.0533 16.4999 16 16.4999ZM16 19.1666C12.44 19.1666 5.33331 20.9533 5.33331 24.4999V27.1666H26.6666V24.4999C26.6666 20.9533 19.56 19.1666 16 19.1666Z" fill="#772B0E"/>
+                        </svg>                            
+                    </span>
+                    <h2>Datos personales</h2>
+                </div>
+                <p class="fecha_description_text">Introduce tus datos personales</p>
+                <!-- /fecha_title -->
+                <form id="formReserva">
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
+                    <input type="tel" id="telefono" placeholder="Teléfono" required>
+                    <button type="submit">Finalizar reserva</button>
+                </form>
+            </div>
         </div>
     </section>
+    <footer class="footer">
+        <div class="footer__logo">
+            <img src="src/assets/img/logo-wara_wara.png" alt="">
+        </div>
+        <div class="footer__contact">
+            <a href="">contacto@warawara.com</a>
+            <a href="">+34 123 45 67 89</a>
+        </div>
+        <div class="footer__copy">
+            <h4>© Derechos de autor reservados - Wara Wara</h4>
+        </div>
+    </footer>
 
     <script src="/src/js/script.js"></script>
 </body>

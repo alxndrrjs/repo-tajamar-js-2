@@ -5,10 +5,13 @@
 @import 'partials/home';
 @import 'partials/reserva';
 @import 'partials/admin';
+@import 'partials/footer';
 
 html {
     scroll-behavior: smooth;
+    scrollbar-color: $color_primary $color_primary_dark;
 }
+
 
 body {
     padding: 0;

@@ -32,7 +32,7 @@
     background-color: #FFDDAE;
 
     .fecha {
-      padding: 3rem;
+      padding: 4rem 3rem;
       width: 100%;
       height: 100%;
       display: flex;
@@ -155,7 +155,7 @@
     justify-content: space-between;
 
     .mesas_container{
-      padding: 3rem;
+      padding: 6rem 3rem;
       width: 100%;
       height: 100%;
       display: flex;
@@ -212,7 +212,7 @@
 
 
     .comensales_container{
-      padding: 3rem;
+      padding: 3.5rem 3rem;
       width: 30%;
       height: 100%;
       display: flex;
@@ -220,7 +220,7 @@
       justify-content: center;
       align-items: center;
   
-      background-color: #FFD08;
+      background-color: #FFD080;
       .comensales_top_text{
         display: flex;
         flex-direction: column;
@@ -314,7 +314,93 @@
   }
   // /seccion2
 
+  #seccion3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15rem;
+    background-color: #FFDDAE;
+    padding: 20px 0;
 
+    .datos_top_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+  
+      margin-bottom: 1.5rem;
+  
+      .datos_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+  
+        .icon_dato {
+          display: flex;
+  
+          svg path {
+            fill: $color_title;
+          }
+        }
+  
+        h2 {
+          font-family: 'Be Vietnam Pro', sans-serif;
+          color: $color_title;
+        }
+      }
+
+      #formReserva {
+        margin: 15px 0;
+        input { 
+          padding: 0.75rem 1rem;
+          margin: 5px;
+          outline: $color_title;
+          border: none;
+          border-radius: 2rem;
+          font-size: 16px;
+          box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+          font-weight: bold;
+          color: #772B0E;
+        }
+
+        button {
+          all: unset;
+          cursor: pointer;
+          padding: 0.75rem 1rem;
+          margin: 10px 5px;
+          border: none;
+          border-radius: 2rem;
+          font-size: 16px;
+          box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+          font-weight: bold;
+          color: #ffffff;
+          @include button_primary;
+          font-family: 'Be Vietnam Pro';
+
+          &:hover {
+            @include button_primary_hover;
+          }
+
+        }
+      }
+  
+      // /fecha_title
+  
+  
+      .fecha_description_text {
+        @include hero_p;
+        color: $color_text_secondary;
+      }
+  
+    }
+    
+    &.hidden {
+      display: none;
+    }
+  }
 
 
 
@@ -326,13 +412,28 @@
   font-size: 16px;
   background-color: #ffffff;
   border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 19em !important;
+  border-radius: 2rem !important;
+  box-shadow: 0 4px 4px rgba($color: #772B0E, $alpha: .3);;
 }
 
 .ui-datepicker-header {
   font-family: 'Be Vietnam Pro';
-  color: white;
+  color: $color_title;
   font-size: 18px;
+  border: none;
+  background: transparent;
+  border-radius: 2rem !important;
+}
+
+.ui-datepicker-next-hover {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-datepicker-prev-hover {
+  background: transparent !important;
+  border: none !important;
 }
 
 .ui-datepicker-calendar th {
@@ -347,6 +448,17 @@
 
 .ui-datepicker .ui-datepicker-buttonpane {
   background-color: #f9f9f9;
+}
+
+.ui-state-default {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-state-active {
+  background: $color_disable !important;
+  border: 2px solid #772B0E !important;
+  border-radius: 8px !important;
 }
 
 /* Estilos para los botones de horarios */

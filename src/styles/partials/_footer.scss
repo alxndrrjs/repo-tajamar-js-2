@@ -1,0 +1,32 @@
+.footer {
+    background: $color_primary;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    padding: 3rem 14rem;
+    font-family: 'Be Vietnam Pro';
+    color: #4b1804;
+
+    .footer__logo {
+        width: 100%;
+        display: inline-flex;
+        justify-content: flex-start;
+    }
+
+    .footer__contact {
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+        gap: 25px;
+        a {
+            all: unset;
+            cursor: pointer;
+        }
+    }
+
+    .footer__copy {
+        display: inline-flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

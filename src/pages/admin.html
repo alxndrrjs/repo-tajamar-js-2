@@ -19,30 +19,61 @@
     }
   </style>
 
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet">
+  <link rel="shortcut icon" href="../assets/img/icon/wara-wara-icon.png" type="image/x-icon">
 
 </head>
 <body>
-  <h1>Reservas del Restaurante</h1>
-  
-  <label for="fechaFiltro">Filtrar por fecha:</label>
-  <input type="date" id="fechaFiltro">
-  <button id="filtrarBtn">Filtrar</button>
-
-  <table id="tablaReservas">
-    <thead>
-      <tr>
-        <th>Fecha y Hora</th>
-        <th>Mesa</th>
-        <th>Comensales</th>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Teléfono</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Las reservas se agregarán aquí dinámicamente -->
-    </tbody>
-  </table>
+  <header id="header" class="header">
+    <div class="header__content">
+        <div class="header__logo">
+            <img src="/src/assets/img/logo-wara_wara.png" loading="lazy" alt="logo warawara">
+        </div>
+        <div class="header__acc">
+            <a href="../../index.html" class="header__admin">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11067)"> <path d="M15 4.00098H5V18.001C5 19.1055 5.89543 20.001 7 20.001H15" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M16 15.001L19 12.001M19 12.001L16 9.00098M19 12.001H9" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11067"> <rect width="24" height="24" fill="white" transform="translate(0 0.000976562)"></rect> </clipPath> </defs> </g></svg>
+            </a>
+        </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main__content">
+      <h1>Reservas del Restaurante</h1>
+      
+      <div class="filter">
+        <label for="fechaFiltro">Filtrar por fecha:</label>
+        <input type="date" id="fechaFiltro">
+        <button id="filtrarBtn">Filtrar</button>
+      </div>
+    
+      <table id="tablaReservas">
+        <thead>
+          <tr>
+            <th>Fecha y Hora</th>
+            <th>Mesa</th>
+            <th>Comensales</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Las reservas se agregarán aquí dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </main>
 
   <!-- Primero carga jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

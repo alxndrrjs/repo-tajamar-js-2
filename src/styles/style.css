@@ -541,28 +541,41 @@ header {
   display: none;
 }
 
-.admin {
-  min-height: 60rem;
+.main {
+  height: 100vh;
   position: relative;
   background: radial-gradient(#99784A 0%, #E9AB57 33%, #FFC77C 65%);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.admin .container {
-  position: absolute;
-  width: 60%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.main .main__content {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Be Vietnam Pro";
 }
-.admin .container td {
+.main .main__content h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: white;
+}
+.main .main__content .filter {
+  color: white;
+  margin: 15px 0;
+}
+.main .main__content td {
   background-color: white;
 }
 
+<<<<<<< HEAD
 .mesa.ocupada {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
+=======
+>>>>>>> 9f823c2aee6908b308e6214bbcb3b57a7dccd102
 html {
   scroll-behavior: smooth;
 }

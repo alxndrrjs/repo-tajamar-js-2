@@ -11,8 +11,6 @@ header {
     justify-content: center;
 
 
-    
-
     .header__content {
         width: 1180px;
 
@@ -70,8 +68,11 @@ header {
                         color: $color_disable
                     }
                 }
+                // /header__item
             }
+            // /header__menu
         }
+        // /header__nav
 
         .header__acc {
             display: flex;
@@ -95,5 +96,8 @@ header {
                 }
             }
         }
+        // /header__acc
     }
+    // /header__content
 }
+// /header

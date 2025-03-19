@@ -10,31 +10,30 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-
-
-
     <link rel="stylesheet" href="./src/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap"
-        rel="stylesheet">
-    <link rel="shortcut icon" href="./src/assets/img/icon/wara-wara-icon.png" type="image/x-icon">
+        rel="stylesheet"
+    >
 
+    <link rel="shortcut icon" href="./src/assets/img/icon/wara-wara-icon.png" type="image/x-icon">
 </head>
 
+
+
 <body>
+
+    <!--HEADER -->
     <header id="header" class="header">
         <div class="header__content">
             <div class="header__logo">
                 <img src="./src/assets/img/logo-wara_wara.png" loading="lazy" alt="logo warawara">
             </div>
+
             <nav class="header__nav">
                 <ul class="header__menu">
                     <li class="header__item disble">
@@ -45,6 +44,7 @@
                     </li>
                 </ul>
             </nav>
+
             <div class="header__acc">
                 <a href="./src/pages/admin.html" class="header__admin">
                     <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,10 +56,12 @@
                 </a>
             </div>
         </div>
+        <!-- /header__content -->
     </header>
     <!-- /header -->
 
 
+    <!-- HERO -->
     <section id="home" class="home__hero">
         <div class="home__content">
             <h1 class="home__title">WARA WARA</h1>
@@ -74,30 +76,27 @@
                 </p>
                 <h4 class="home__description_cta">¡Reserva ahora y vive el sabor!</h4>
             </div>
+
             <a href="./#reserva" class="home__button">Reservar</a>
+
         </div>
+        <!-- /home__content -->
     </section>
     <!-- /home_hero -->
 
 
-    <!-- <section id="reserva" class="reserva">
-        <div class="reserva__fecha">
-            <div class="reserva__fecha-title">
-                <h2>
-                    <img src="../assets/img/reserva-icon/calendar.svg" alt="">
-                    Fecha
-                </h2>
-                <span>Elige el día de tu reserva</span>
-            </div>
-            <div id="calendar" class="calendar"> -->
 
-    <section id="reserva" class="reserva">
-        <section class="reserva_title">
+    <!-- RESERVA -->
+    <div id="reserva" class="reserva">
+
+        <div class="reserva_title">
             <h1>Reserva Restaurante</h1>
-        </section>
+        </div>
 
 
-        <div id="seccion1">
+
+        <!-- SECCION 1 -->
+        <section id="seccion1">
             <article class="fecha">
                 <div class="fecha_top_text">
                     <div class="fecha_title">
@@ -108,12 +107,10 @@
                                     d="M12 13.3334H9.33333V16H12V13.3334ZM17.3333 13.3334H14.6667V16H17.3333V13.3334ZM22.6667 13.3334H20V16H22.6667V13.3334ZM25.3333 4.00004H24V1.33337H21.3333V4.00004H10.6667V1.33337H8V4.00004H6.66667C5.95942 4.00004 5.28115 4.28099 4.78105 4.78109C4.28095 5.28119 4 5.95946 4 6.66671V25.3334C4 26.0406 4.28095 26.7189 4.78105 27.219C5.28115 27.7191 5.95942 28 6.66667 28H25.3333C26.0406 28 26.7189 27.7191 27.219 27.219C27.719 26.7189 28 26.0406 28 25.3334V6.66671C28 5.95946 27.719 5.28119 27.219 4.78109C26.7189 4.28099 26.0406 4.00004 25.3333 4.00004ZM25.3333 25.3334H6.66667V10.6667H25.3333V25.3334Z"
                                     fill="#772B0E" />
                             </svg>
-
                         </span>
                         <h2>Fecha</h2>
                     </div>
                     <!-- /fecha_title -->
-
 
                     <p class="fecha_description_text">Elige el día de tu reserva</p>
                 </div>
@@ -123,8 +120,8 @@
             </article>
             <!-- /fecha -->
 
-
-            <div id="horarios_disponibles" class="hidden">
+            <!-- HORARIOS -->
+            <article id="horarios_disponibles" class="hidden">
                 <div class="horarios_disp_container">
                     <div class="hora_top_text hidden">
                         <div class="hora_title">
@@ -149,12 +146,19 @@
 
                     <div id="horarios"></div>
                     <button id="siguienteHorario" class="hidden">Siguiente</button>
+
                 </div>
+                <!-- /horarios_disp_container -->
+            </article>
+            <!-- /horarios_disponibles -->
+        </section>
+        <!-- /seccion1 -->
 
-            </div>
-        </div>
 
-        <div id="seccion2" class="hidden">
+        <!-- SECCION 2 -->
+        <section id="seccion2" class="hidden">
+
+            <!-- MESAS -->
             <article class="mesas_container hidden" >
                 <div class="mesas_top_text">
                     <div class="mesas_title">
@@ -165,19 +169,21 @@
                                     d="M29.3333 10C29.3333 7.42671 23.36 5.33337 16 5.33337C8.63999 5.33337 2.66666 7.42671 2.66666 10C2.66666 12.4134 7.93332 14.4134 14.6667 14.64V20H12.4667C11.3733 20 10.4 20.6667 9.98666 21.68L8.66666 24.9734C8.35999 25.7867 8.94666 26.6667 9.82666 26.6667C10.3333 26.6667 10.7867 26.36 10.9733 25.8934L12.2667 22.6667H19.7333L21.0267 25.8934C21.2133 26.36 21.6667 26.6667 22.1733 26.6667C23.0533 26.6667 23.6533 25.7867 23.32 24.9734L22 21.68C21.6 20.6667 20.6133 20 19.5333 20H17.3333V14.64C24.0667 14.4134 29.3333 12.4134 29.3333 10Z"
                                     fill="#772B0E" />
                             </svg>
-
                         </span>
+
                         <h2>Mesas</h2>
                     </div>
-
+                    
                     <p class="mesas_description_text">Tu mesa, tu espacio. Selecciónala y disfruta al máximo.</p>
                 </div>
                 <!-- /mesas_top_text -->
 
                 <div id="mesasDisponibles"></div>
             </article>
+            <!-- /mesas_container -->
 
-            <div class="comensales_container hidden">
+            <!-- COMENSALES -->
+            <article class="comensales_container hidden">
                 <div class="comensales_top_text">
                     <div class="comensales_title">
                         <span class="icon_comensales">
@@ -187,8 +193,10 @@
                                     d="M29.3333 10C29.3333 7.42671 23.36 5.33337 16 5.33337C8.63999 5.33337 2.66666 7.42671 2.66666 10C2.66666 12.4134 7.93332 14.4134 14.6667 14.64V20H12.4667C11.3733 20 10.4 20.6667 9.98666 21.68L8.66666 24.9734C8.35999 25.7867 8.94666 26.6667 9.82666 26.6667C10.3333 26.6667 10.7867 26.36 10.9733 25.8934L12.2667 22.6667H19.7333L21.0267 25.8934C21.2133 26.36 21.6667 26.6667 22.1733 26.6667C23.0533 26.6667 23.6533 25.7867 23.32 24.9734L22 21.68C21.6 20.6667 20.6133 20 19.5333 20H17.3333V14.64C24.0667 14.4134 29.3333 12.4134 29.3333 10Z"
                                     fill="#772B0E" />
                             </svg>
+
                             <h2>Nº de</h2>
                         </span>
+
                         <h2>comensales</h2>
                     </div>
                     <!-- / comensales_title-->
@@ -202,15 +210,16 @@
                     <button id="siguienteMesa" class="hidden">Siguiente</button>
                 </div>
 
-            </div>
+            </article>
+            <!-- /comensales_container -->
+        </section>
+        <!-- /seccion2 -->
 
 
-        </div>
 
-        
-
-        <div id="seccion3" class="hidden">
-            <div class="datos_top_text">
+        <!-- SECCION 3 -->
+        <section id="seccion3" class="hidden">
+            <article class="datos_top_text">
                 <div class="datos_title">
                     <span class="icon_dato">
                         <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -219,17 +228,26 @@
                     </span>
                     <h2>Datos personales</h2>
                 </div>
+                <!-- /datos_title -->
+                
                 <p class="fecha_description_text">Introduce tus datos personales</p>
-                <!-- /fecha_title -->
+                
                 <form id="formReserva">
                     <input type="text" id="nombre" placeholder="Nombre" required>
                     <input type="email" id="email" placeholder="Correo electrónico" required>
                     <input type="tel" id="telefono" placeholder="Teléfono" required>
                     <button type="submit">Finalizar reserva</button>
                 </form>
-            </div>
-        </div>
-    </section>
+            </article>
+        </section>
+        <!-- /seccion3 -->
+
+    </div>
+    <!-- /reserva -->
+
+
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer__logo">
             <img src="./src/assets/img/logo-wara_wara.png" alt="">
@@ -242,6 +260,8 @@
             <h4>© Derechos de autor reservados - Wara Wara</h4>
         </div>
     </footer>
+
+
 
     <script src="./src/js/script.js"></script>
 </body>

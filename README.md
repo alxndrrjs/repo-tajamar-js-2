@@ -1,5 +1,10 @@
 # repo-tajamar-js-2
 
+## Enlace a la página:
+
+Despliegue en GitHub Pages:  
+https://alxndrrjs.github.io/repo-tajamar-js-2/
+
 # Descripción
 Este repositorio contiene un proyecto de desarrollo web utilizando HTML, CSS, SCSS y JavaScript. Es un proyecto estructurado para poner en práctica habilidades de desarrollo frontend con un enfoque en el uso de tecnologías web comunes.
 

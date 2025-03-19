@@ -335,6 +335,9 @@ header {
   align-items: center;
   background-color: #FFD080;
 }
+.reserva #seccion2 .comensales_container.hidden {
+  display: none;
+}
 .reserva #seccion2 .comensales_container .comensales_top_text {
   display: flex;
   flex-direction: column;
@@ -369,9 +372,6 @@ header {
   width: 30ch;
   text-wrap: balance;
   text-align: center;
-}
-.reserva #seccion2 .comensales_container.hidden {
-  display: none;
 }
 .reserva #seccion2 .comensales_container .input_comensales {
   display: flex;

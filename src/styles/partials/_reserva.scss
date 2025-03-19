@@ -23,7 +23,7 @@
   }
 
 
-
+  // SECCION 1
   #seccion1 {
     display: flex;
     justify-content: space-between;
@@ -70,7 +70,6 @@
             color: $color_title;
           }
         }
-
         // /fecha_title
 
 
@@ -80,11 +79,15 @@
         }
 
       }
-
+      // /fecha_top_text
 
       #calendario {}
-    }
 
+    }
+    // /fecha
+
+
+    // HORARIOS SECTION
     #horarios_disponibles {
       .horarios_disp_container{
         
@@ -133,6 +136,7 @@
         }
         // /hora_top_text
   
+        // HORARIOS
         #horarios {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
@@ -141,8 +145,9 @@
   
         #siguienteHorario {}
       }
-      
+      // /horarios_disp_container
     }
+    // /horarios_disponibles
   }
   // /seccion1
 
@@ -211,6 +216,7 @@
     // /mesas_container
 
 
+    // COMENSALES
     .comensales_container{
       padding: 3.5rem 3rem;
       width: 30%;
@@ -221,6 +227,11 @@
       align-items: center;
   
       background-color: #FFD080;
+
+      &.hidden {
+        display: none;
+      }
+
       .comensales_top_text{
         display: flex;
         flex-direction: column;
@@ -259,10 +270,8 @@
           text-align: center;
         }
       }
+      // /comensales_top_text
 
-      &.hidden {
-        display: none;
-      }
 
 
       // INPUT COMENSALES
@@ -314,6 +323,9 @@
   }
   // /seccion2
 
+
+
+  // SECCION 3
   #seccion3 {
     display: flex;
     justify-content: center;
@@ -351,7 +363,10 @@
           color: $color_title;
         }
       }
+      // /datos_title
 
+
+      // FORMULARIO DATOS PERSONALES
       #formReserva {
         margin: 15px 0;
         input { 
@@ -383,11 +398,10 @@
           &:hover {
             @include button_primary_hover;
           }
-
         }
+
       }
-  
-      // /fecha_title
+      // /formReserva
   
   
       .fecha_description_text {
@@ -396,18 +410,22 @@
       }
   
     }
-    
+    // /datos_top_text
+
+
     &.hidden {
       display: none;
     }
   }
+  // /seccion3
 
-
-
-
-  
 }
+// /reserva
 
+
+
+
+// CALENDARIO
 .ui-datepicker {
   font-size: 16px;
   background-color: #ffffff;

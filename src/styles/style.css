@@ -1,0 +1,732 @@
+@charset "UTF-8";
+header {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+}
+.header .header__content {
+  width: 1180px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+  color: #fff;
+  background-color: #EC4826;
+  box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+}
+.header .header__content .header__logo {
+  display: flex;
+  width: 64px;
+}
+.header .header__content .header__logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header .header__content .header__nav .header__menu {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.header .header__content .header__nav .header__menu .header__item {
+  list-style-type: none;
+  font-family: "Oswald", sans-serif;
+  font-weight: medium;
+  font-size: 24px;
+  padding: 0 2rem;
+}
+.header .header__content .header__nav .header__menu .header__item .header__link {
+  all: unset;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.header .header__content .header__nav .header__menu .header__item .header__link:hover {
+  color: #0f0f0f;
+}
+.header .header__content .header__nav .header__menu .header__item.active {
+  color: white;
+}
+.header .header__content .header__nav .header__menu .header__item.disble {
+  color: #EAB5A1;
+}
+.header .header__content .header__acc {
+  display: flex;
+  justify-content: flex-end;
+}
+.header .header__content .header__acc .header__admin {
+  border-radius: 50%;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+}
+.header .header__content .header__acc .header__admin svg {
+  width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+.header .header__content .header__acc .header__admin:hover svg path {
+  fill: #0f0f0f;
+}
+
+.home__hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(#7a5f37 0%, #E9AB57 20%, #FFC77C 65%);
+  background-position: center;
+  color: #fff;
+}
+.home__hero .home__content {
+  margin-top: 5rem;
+  max-width: 90rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+.home__hero .home__content .home__title {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  font-size: 130px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: -120px;
+  white-space: nowrap;
+}
+.home__hero .home__content .hero__img {
+  margin-left: 4rem;
+  width: 650px;
+}
+.home__hero .home__content .hero__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.home__hero .home__content .home__info {
+  margin-top: -120px;
+  text-align: center;
+  color: #FFEED7;
+}
+.home__hero .home__content .home__info .home__description {
+  width: 50ch;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+.home__hero .home__content .home__info .home__description_cta {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  color: #772B0E;
+}
+.home__hero .home__content .home__button {
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  background-color: #EC4826;
+  box-shadow: inset 1px 4px 8px 2px rgba(119, 43, 14, 0.6), inset -3px -2px 8px 0 #ffbc51, 0 4px 4px rgba(119, 43, 14, 0.25);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.home__hero .home__content .home__button:hover {
+  padding: 0.75rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  background-color: #8A2F1C;
+  box-shadow: inset 1px 4px 8px 2px rgba(119, 43, 14, 0.6), inset -3px -2px 8px 0 #ffbc51, 0 4px 4px rgba(119, 43, 14, 0.25);
+  color: #EAB5A1;
+}
+
+.reserva {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #FFC77C;
+}
+.reserva .reserva_title {
+  width: 1180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.reserva .reserva_title h1 {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  font-size: 72px;
+  color: #772B0E;
+}
+.reserva #seccion1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #FFDDAE;
+}
+.reserva #seccion1 .fecha {
+  padding: 4rem 3rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFE5C1;
+}
+.reserva #seccion1 .fecha .fecha_top_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.reserva #seccion1 .fecha .fecha_top_text .fecha_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.reserva #seccion1 .fecha .fecha_top_text .fecha_title .icon_fecha {
+  display: flex;
+}
+.reserva #seccion1 .fecha .fecha_top_text .fecha_title .icon_fecha svg path {
+  fill: #772B0E;
+}
+.reserva #seccion1 .fecha .fecha_top_text .fecha_title h2 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #772B0E;
+}
+.reserva #seccion1 .fecha .fecha_top_text .fecha_description_text {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #D08264;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container {
+  padding: 2rem 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container .hora_top_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container .hora_top_text .hora_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container .hora_top_text .hora_title .icon_hora {
+  display: flex;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container .hora_top_text .hora_title .icon_hora svg path {
+  stroke: #772B0E;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container .hora_top_text .hora_title h2 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #772B0E;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container .hora_top_text .hora_description_text {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #D08264;
+  text-wrap: balance;
+  text-align: center;
+}
+.reserva #seccion1 #horarios_disponibles .horarios_disp_container #horarios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.reserva #seccion2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.reserva #seccion2 .mesas_container {
+  padding: 6rem 3rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFD69E;
+}
+.reserva #seccion2 .mesas_container .mesas_top_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.reserva #seccion2 .mesas_container .mesas_top_text .mesas_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.reserva #seccion2 .mesas_container .mesas_top_text .mesas_title .icon_mesa {
+  display: flex;
+}
+.reserva #seccion2 .mesas_container .mesas_top_text .mesas_title .icon_mesa svg path {
+  stroke: #772B0E;
+}
+.reserva #seccion2 .mesas_container .mesas_top_text .mesas_title h2 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #772B0E;
+}
+.reserva #seccion2 .mesas_container .mesas_top_text .mesas_description_text {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #D08264;
+  width: 30ch;
+  text-wrap: balance;
+  text-align: center;
+}
+.reserva #seccion2 .mesas_container.hidden {
+  display: none;
+}
+.reserva #seccion2 .comensales_container {
+  padding: 3.5rem 3rem;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFD080;
+}
+.reserva #seccion2 .comensales_container .comensales_top_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.reserva #seccion2 .comensales_container .comensales_top_text .comensales_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.reserva #seccion2 .comensales_container .comensales_top_text .comensales_title .icon_comensales {
+  display: flex;
+}
+.reserva #seccion2 .comensales_container .comensales_top_text .comensales_title .icon_comensales svg path {
+  color: #772B0E;
+}
+.reserva #seccion2 .comensales_container .comensales_top_text .comensales_title h2 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #772B0E;
+  text-align: center;
+  text-wrap: balance;
+}
+.reserva #seccion2 .comensales_container .comensales_top_text .comensales_description_text {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #D08264;
+  width: 30ch;
+  text-wrap: balance;
+  text-align: center;
+}
+.reserva #seccion2 .comensales_container.hidden {
+  display: none;
+}
+.reserva #seccion2 .comensales_container .input_comensales {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.reserva #seccion2 .comensales_container .input_comensales #numComensales {
+  padding: 0.75rem 1rem;
+  margin: 5px;
+  width: 130px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
+  color: #772B0E;
+}
+.reserva #seccion2 .comensales_container .input_comensales #numComensales:focus {
+  outline: none;
+}
+.reserva #seccion2 .comensales_container .input_comensales #siguienteMesa {
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  background-color: #EC4826;
+  box-shadow: inset 1px 4px 8px 2px rgba(119, 43, 14, 0.6), inset -3px -2px 8px 0 #ffbc51, 0 4px 4px rgba(119, 43, 14, 0.25);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.reserva #seccion2 .comensales_container .input_comensales #siguienteMesa:hover {
+  padding: 0.75rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  background-color: #8A2F1C;
+  box-shadow: inset 1px 4px 8px 2px rgba(119, 43, 14, 0.6), inset -3px -2px 8px 0 #ffbc51, 0 4px 4px rgba(119, 43, 14, 0.25);
+}
+.reserva #seccion3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15rem;
+  background-color: #FFDDAE;
+  padding: 20px 0;
+}
+.reserva #seccion3 .datos_top_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.reserva #seccion3 .datos_top_text .datos_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.reserva #seccion3 .datos_top_text .datos_title .icon_dato {
+  display: flex;
+}
+.reserva #seccion3 .datos_top_text .datos_title .icon_dato svg path {
+  fill: #772B0E;
+}
+.reserva #seccion3 .datos_top_text .datos_title h2 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #772B0E;
+}
+.reserva #seccion3 .datos_top_text #formReserva {
+  margin: 15px 0;
+}
+.reserva #seccion3 .datos_top_text #formReserva input {
+  padding: 0.75rem 1rem;
+  margin: 5px;
+  outline: #772B0E;
+  border: none;
+  border-radius: 2rem;
+  font-size: 16px;
+  box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+  font-weight: bold;
+  color: #772B0E;
+}
+.reserva #seccion3 .datos_top_text #formReserva button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 2rem;
+  font-size: 16px;
+  box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  background-color: #EC4826;
+  box-shadow: inset 1px 4px 8px 2px rgba(119, 43, 14, 0.6), inset -3px -2px 8px 0 #ffbc51, 0 4px 4px rgba(119, 43, 14, 0.25);
+  font-family: "Be Vietnam Pro";
+}
+.reserva #seccion3 .datos_top_text #formReserva button:hover {
+  padding: 0.75rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  background-color: #8A2F1C;
+  box-shadow: inset 1px 4px 8px 2px rgba(119, 43, 14, 0.6), inset -3px -2px 8px 0 #ffbc51, 0 4px 4px rgba(119, 43, 14, 0.25);
+}
+.reserva #seccion3 .datos_top_text .fecha_description_text {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #D08264;
+}
+.reserva #seccion3.hidden {
+  display: none;
+}
+
+.ui-datepicker {
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  width: 19em !important;
+  border-radius: 2rem !important;
+  box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+}
+
+.ui-datepicker-header {
+  font-family: "Be Vietnam Pro";
+  color: #772B0E;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  border-radius: 2rem !important;
+}
+
+.ui-datepicker-next-hover {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-datepicker-prev-hover {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-datepicker-calendar th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.ui-datepicker td {
+  text-align: center;
+  padding: 5px;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-color: #f9f9f9;
+}
+
+.ui-state-default {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-state-active {
+  background: #EAB5A1 !important;
+  border: 2px solid #772B0E !important;
+  border-radius: 8px !important;
+}
+
+/* Estilos para los botones de horarios */
+.horario {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 1rem;
+  margin: 5px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
+  color: #772B0E;
+  cursor: pointer;
+}
+.horario svg path {
+  stroke: #772B0E;
+}
+.horario:hover {
+  background-color: #EAB5A1;
+}
+.horario.selected {
+  background-color: #EAB5A1;
+  box-shadow: inset 0 0 0 4px rgb(222, 67, 72);
+  color: rgb(222, 67, 72);
+}
+.horario.selected svg path {
+  stroke: rgb(222, 67, 72);
+}
+
+.horario-ocupado {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.horario-reservado {
+  background-color: #ffc107;
+  cursor: not-allowed;
+}
+
+/* Estilos para el formulario */
+.formulario {
+  margin-top: 20px;
+}
+
+.formulario input,
+.formulario select {
+  padding: 8px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* Mesas visualización */
+.mesa {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100px;
+  color: #0f0f0f;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.mesa.selected {
+  background-color: #EAB5A1;
+  box-shadow: inset 0 0 0 4px rgb(222, 67, 72);
+  color: rgb(222, 67, 72);
+}
+
+.mesa-ocupada {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.mesa-reservada {
+  background-color: #ffc107;
+}
+
+.hidden {
+  display: none;
+}
+
+.main {
+  height: 100vh;
+  position: relative;
+  background: radial-gradient(#99784A 0%, #E9AB57 33%, #FFC77C 65%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main .main__content {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Be Vietnam Pro";
+}
+.main .main__content h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: white;
+}
+.main .main__content .filter {
+  color: white;
+  margin: 15px 0;
+}
+.main .main__content td {
+  background-color: white;
+}
+
+.footer {
+  background: #EC4826;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  padding: 3rem 14rem;
+  font-family: "Be Vietnam Pro";
+  color: #4b1804;
+}
+.footer .footer__logo {
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-start;
+}
+.footer .footer__contact {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  gap: 25px;
+}
+.footer .footer__contact a {
+  all: unset;
+  cursor: pointer;
+}
+.footer .footer__copy {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #EC4826 #8A2F1C;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans 3";
+  overflow-x: hidden;
+}
+
+strong {
+  font-weight: 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=style.css.map */

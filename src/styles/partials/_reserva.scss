@@ -1,0 +1,563 @@
+.reserva {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  background-color: #FFC77C;
+
+  .reserva_title {
+    width: 1180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 4rem;
+
+
+    h1 {
+      @include h1_desktop;
+      color: $color_title;
+    }
+  }
+
+
+
+  #seccion1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #FFDDAE;
+
+    .fecha {
+      padding: 4rem 3rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #FFE5C1;
+
+      .fecha_top_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+        margin-bottom: 1.5rem;
+
+        .fecha_title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: .5rem;
+
+          .icon_fecha {
+            display: flex;
+
+            svg path {
+              fill: $color_title;
+            }
+          }
+
+          h2 {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            color: $color_title;
+          }
+        }
+
+        // /fecha_title
+
+
+        .fecha_description_text {
+          @include hero_p;
+          color: $color_text_secondary;
+        }
+
+      }
+
+
+      #calendario {}
+    }
+
+    #horarios_disponibles {
+      .horarios_disp_container{
+        
+        padding: 2rem 7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .hora_top_text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: .5rem;
+  
+          margin-bottom: 1.5rem;
+
+          .hora_title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+  
+            .icon_hora {
+              display: flex;
+  
+              svg path {
+                stroke: $color_title;
+              }
+            }
+  
+            h2 {
+              font-family: 'Be Vietnam Pro', sans-serif;
+              color: $color_title;
+            }
+          }
+          //  /hora_title
+  
+          .hora_description_text {
+            @include hero_p;
+            color: $color_text_secondary;
+            text-wrap: balance;
+            text-align: center;
+          }
+        }
+        // /hora_top_text
+  
+        #horarios {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 1.5rem;
+        }
+  
+        #siguienteHorario {}
+      }
+      
+    }
+  }
+  // /seccion1
+
+
+
+  // SECCION 2
+  #seccion2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .mesas_container{
+      padding: 6rem 3rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      background-color: #FFD69E;
+
+      .mesas_top_text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+  
+        margin-bottom: 1.5rem;
+  
+        .mesas_title{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: .5rem;
+  
+          .icon_mesa{
+            display: flex;
+            svg path {
+              stroke: $color_title;
+            }
+          }
+  
+          h2{
+            font-family: 'Be Vietnam Pro', sans-serif;
+            color: $color_title;
+          }
+        }
+        // /mesas_title
+  
+        .mesas_description_text{
+          @include hero_p;
+          color: $color_text_secondary;
+          width: 30ch;
+          text-wrap: balance;
+          text-align: center;
+        }
+      }
+      // /mesas_top_text
+
+      &.hidden {
+        display: none;
+      }
+    }
+    // /mesas_container
+
+
+    .comensales_container{
+      padding: 3.5rem 3rem;
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      background-color: #FFD080;
+      .comensales_top_text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+  
+        margin-bottom: 1.5rem;
+        .comensales_title{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .icon_comensales{
+            display: flex;
+            svg path {
+              color: $color_title;
+            }
+          }
+
+          h2{
+            font-family: 'Be Vietnam Pro', sans-serif;
+            color: $color_title;
+            text-align: center;
+            text-wrap: balance;
+          }
+        }
+        // /comensales_title
+
+        .comensales_description_text{
+          @include hero_p;
+          color: $color_text_secondary;
+          width: 30ch;
+          text-wrap: balance;
+          text-align: center;
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+
+
+      // INPUT COMENSALES
+      .input_comensales{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        #numComensales {
+          padding: .75rem 1rem;
+          margin: 5px;
+          width: 130px;
+        
+          background-color: #ffffff;
+          border: none;
+          border-radius: $border-radius_horarios_btn;
+          @include input_shadow;
+        
+          @include button_primary_f;
+          font-weight: bold;
+          color: $color_title;
+
+          &:focus {
+            outline: none;
+          }
+        }
+        // /input_comensales
+
+        #siguienteMesa{
+          text-decoration: none;
+          color: $color_white;
+          border: none;
+          @include button_primary;
+          margin-top: 1.5rem;
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          transition: all 0.3s;
+
+          &:hover {
+            @include button_primary_hover;
+          }
+        }
+      }
+
+
+
+    }
+    // /comensales_container
+  }
+  // /seccion2
+
+  #seccion3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15rem;
+    background-color: #FFDDAE;
+    padding: 20px 0;
+
+    .datos_top_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+  
+      margin-bottom: 1.5rem;
+  
+      .datos_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+  
+        .icon_dato {
+          display: flex;
+  
+          svg path {
+            fill: $color_title;
+          }
+        }
+  
+        h2 {
+          font-family: 'Be Vietnam Pro', sans-serif;
+          color: $color_title;
+        }
+      }
+
+      #formReserva {
+        margin: 15px 0;
+        input { 
+          padding: 0.75rem 1rem;
+          margin: 5px;
+          outline: $color_title;
+          border: none;
+          border-radius: 2rem;
+          font-size: 16px;
+          box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+          font-weight: bold;
+          color: #772B0E;
+        }
+
+        button {
+          all: unset;
+          cursor: pointer;
+          padding: 0.75rem 1rem;
+          margin: 10px 5px;
+          border: none;
+          border-radius: 2rem;
+          font-size: 16px;
+          box-shadow: 0 4px 4px rgba(119, 43, 14, 0.3);
+          font-weight: bold;
+          color: #ffffff;
+          @include button_primary;
+          font-family: 'Be Vietnam Pro';
+
+          &:hover {
+            @include button_primary_hover;
+          }
+
+        }
+      }
+  
+      // /fecha_title
+  
+  
+      .fecha_description_text {
+        @include hero_p;
+        color: $color_text_secondary;
+      }
+  
+    }
+    
+    &.hidden {
+      display: none;
+    }
+  }
+
+
+
+
+  
+}
+
+.ui-datepicker {
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  width: 19em !important;
+  border-radius: 2rem !important;
+  box-shadow: 0 4px 4px rgba($color: #772B0E, $alpha: .3);;
+}
+
+.ui-datepicker-header {
+  font-family: 'Be Vietnam Pro';
+  color: $color_title;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  border-radius: 2rem !important;
+}
+
+.ui-datepicker-next-hover {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-datepicker-prev-hover {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-datepicker-calendar th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.ui-datepicker td {
+  text-align: center;
+  padding: 5px;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-color: #f9f9f9;
+}
+
+.ui-state-default {
+  background: transparent !important;
+  border: none !important;
+}
+
+.ui-state-active {
+  background: $color_disable !important;
+  border: 2px solid #772B0E !important;
+  border-radius: 8px !important;
+}
+
+/* Estilos para los botones de horarios */
+.horario {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: .75rem 1rem;
+  margin: 5px;
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: $border-radius_horarios_btn;
+  @include input_shadow;
+
+  @include button_primary_f;
+  font-weight: bold;
+  color: $color_title;
+
+  svg path {
+    stroke: $color_title;
+  }
+
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color_disable;
+  }
+
+  &.selected {
+    background-color: $color_disable;
+    box-shadow: inset 0 0 0 4px $color-selected;
+    color: $color-selected;
+
+    svg path {
+      stroke: $color-selected;
+    }
+  }
+
+}
+
+.horario-ocupado {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.horario-reservado {
+  background-color: #ffc107;
+  cursor: not-allowed;
+}
+
+/* Estilos para el formulario */
+.formulario {
+  margin-top: 20px;
+}
+
+.formulario input,
+.formulario select {
+  padding: 8px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* Mesas visualización */
+.mesa {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: $color_white;
+  text-align: center;
+  line-height: 100px;
+  color: $color_black;
+  @include button_primary_f;
+  border-radius: $border-radius_horarios_btn;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.selected {
+    background-color: $color_disable;
+    box-shadow: inset 0 0 0 4px $color-selected;
+    color: $color-selected;
+  }
+
+}
+
+.mesa-ocupada {
+  background-color: #dc3545;
+  cursor: not-allowed;
+}
+
+.mesa-reservada {
+  background-color: #ffc107;
+}
+
+.hidden {
+  display: none;
+}
+
+
+

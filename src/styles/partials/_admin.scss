@@ -1,0 +1,34 @@
+.main {
+    height: 100vh;
+    position: relative;
+    background: radial-gradient(#99784A 0%, #E9AB57 33%, #FFC77C 65%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .main__content {
+        width: 80%;
+        margin: 0 auto;
+        font-family: "Be Vietnam Pro";
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: white;
+        }
+
+        .filter {
+            color: white;
+            margin: 15px 0;
+        }
+
+        td {
+            background-color: white;
+        }
+    }
+}
+
+// .mesa.selected {
+//     background-color: #80E1F3;
+// }

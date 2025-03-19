@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    
-    
+
+
 
 
     <link rel="stylesheet" href="/src/styles/style.css">
@@ -78,9 +78,9 @@
         </div>
     </section>
     <!-- /home_hero -->
-    
 
-    <section id="reserva" class="reserva">
+
+    <!-- <section id="reserva" class="reserva">
         <div class="reserva__fecha">
             <div class="reserva__fecha-title">
                 <h2>
@@ -89,27 +89,122 @@
                 </h2>
                 <span>Elige el día de tu reserva</span>
             </div>
-            <div id="calendar" class="calendar">
+            <div id="calendar" class="calendar"> -->
 
     <section id="reserva" class="reserva">
-        <h1>Reserva Restaurante</h1>
+        <section class="reserva_title">
+            <h1>Reserva Restaurante</h1>
+        </section>
+
 
         <div id="seccion1">
-        <h2>Seleccione fecha y horario</h2>
-            <div id="calendario"></div> <!-- Calendario -->
-            <div id="horariosDisponibles" class="hidden">
-                <h3>Selecciona la hora:</h3>
-                <div id="horarios"></div>
-                <button id="siguienteHorario" class="hidden">Siguiente</button>
+            <article class="fecha">
+                <div class="fecha_top_text">
+                    <div class="fecha_title">
+                        <span class="icon_fecha">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 13.3334H9.33333V16H12V13.3334ZM17.3333 13.3334H14.6667V16H17.3333V13.3334ZM22.6667 13.3334H20V16H22.6667V13.3334ZM25.3333 4.00004H24V1.33337H21.3333V4.00004H10.6667V1.33337H8V4.00004H6.66667C5.95942 4.00004 5.28115 4.28099 4.78105 4.78109C4.28095 5.28119 4 5.95946 4 6.66671V25.3334C4 26.0406 4.28095 26.7189 4.78105 27.219C5.28115 27.7191 5.95942 28 6.66667 28H25.3333C26.0406 28 26.7189 27.7191 27.219 27.219C27.719 26.7189 28 26.0406 28 25.3334V6.66671C28 5.95946 27.719 5.28119 27.219 4.78109C26.7189 4.28099 26.0406 4.00004 25.3333 4.00004ZM25.3333 25.3334H6.66667V10.6667H25.3333V25.3334Z"
+                                    fill="#772B0E" />
+                            </svg>
+
+                        </span>
+                        <h2>Fecha</h2>
+                    </div>
+                    <!-- /fecha_title -->
+
+
+                    <p class="fecha_description_text">Elige el día de tu reserva</p>
+                </div>
+                <!-- /fecha_top_text -->
+
+                <div id="calendario"></div> <!-- Calendario -->
+            </article>
+            <!-- /fecha -->
+
+
+            <div id="horarios_disponibles" class="hidden">
+                <div class="horarios_disp_container">
+                    <div class="hora_top_text hidden">
+                        <div class="hora_title">
+                            <span class="icon_hora">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z"
+                                        stroke="#772B0E" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14.6666 10.6666V17.3333H21.3333" stroke="#772B0E" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+
+                            <h2>Hora</h2>
+                        </div>
+
+                        <p class="hora_description_text">Selecciona la hora, <br>
+                            ¡tu experiencia comienza cuando tú decidas!</p>
+                    </div>
+
+                    <div id="horarios"></div>
+                    <button id="siguienteHorario" class="hidden">Siguiente</button>
+                </div>
+
             </div>
         </div>
 
         <div id="seccion2" class="hidden">
-            <h2>Seleccione mesa y número de comensales</h2>
-            <div id="mesasDisponibles"></div>
-            <label for="numComensales">Número de comensales:</label>
-            <input type="number" id="numComensales" min="1" max="4">
-            <button id="siguienteMesa" class="hidden">Siguiente</button>
+            <article class="mesas_container hidden" >
+                <div class="mesas_top_text">
+                    <div class="mesas_title">
+                        <span class="icon_mesa">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M29.3333 10C29.3333 7.42671 23.36 5.33337 16 5.33337C8.63999 5.33337 2.66666 7.42671 2.66666 10C2.66666 12.4134 7.93332 14.4134 14.6667 14.64V20H12.4667C11.3733 20 10.4 20.6667 9.98666 21.68L8.66666 24.9734C8.35999 25.7867 8.94666 26.6667 9.82666 26.6667C10.3333 26.6667 10.7867 26.36 10.9733 25.8934L12.2667 22.6667H19.7333L21.0267 25.8934C21.2133 26.36 21.6667 26.6667 22.1733 26.6667C23.0533 26.6667 23.6533 25.7867 23.32 24.9734L22 21.68C21.6 20.6667 20.6133 20 19.5333 20H17.3333V14.64C24.0667 14.4134 29.3333 12.4134 29.3333 10Z"
+                                    fill="#772B0E" />
+                            </svg>
+
+                        </span>
+                        <h2>Mesas</h2>
+                    </div>
+
+                    <p class="mesas_description_text">Tu mesa, tu espacio. Selecciónala y disfruta al máximo.</p>
+                </div>
+                <!-- /mesas_top_text -->
+
+                <div id="mesasDisponibles"></div>
+            </article>
+
+            <div class="comensales_container hidden">
+                <div class="comensales_top_text">
+                    <div class="comensales_title">
+                        <span class="icon_comensales">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M29.3333 10C29.3333 7.42671 23.36 5.33337 16 5.33337C8.63999 5.33337 2.66666 7.42671 2.66666 10C2.66666 12.4134 7.93332 14.4134 14.6667 14.64V20H12.4667C11.3733 20 10.4 20.6667 9.98666 21.68L8.66666 24.9734C8.35999 25.7867 8.94666 26.6667 9.82666 26.6667C10.3333 26.6667 10.7867 26.36 10.9733 25.8934L12.2667 22.6667H19.7333L21.0267 25.8934C21.2133 26.36 21.6667 26.6667 22.1733 26.6667C23.0533 26.6667 23.6533 25.7867 23.32 24.9734L22 21.68C21.6 20.6667 20.6133 20 19.5333 20H17.3333V14.64C24.0667 14.4134 29.3333 12.4134 29.3333 10Z"
+                                    fill="#772B0E" />
+                            </svg>
+                            <h2>Nº de</h2>
+                        </span>
+                        <h2>comensales</h2>
+                    </div>
+                    <!-- / comensales_title-->
+
+                    <p class="comensales_description_text">Tu mesa, tu espacio. Selecciónala y disfruta al máximo.</p>
+                </div>
+
+                <div class="input_comensales">
+
+                    <input type="number" id="numComensales" min="1" max="4" placeholder="0">
+                    <button id="siguienteMesa" class="hidden">Siguiente</button>
+                </div>
+
+            </div>
+
+
         </div>
 
         <div id="seccion3" class="hidden">

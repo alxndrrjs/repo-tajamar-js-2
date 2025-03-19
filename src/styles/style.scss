@@ -14,8 +14,15 @@ body {
     padding: 0;
     margin: 0;
     font-family: $font__source;
+    overflow-x: hidden;
 }
 
 strong {
     font-weight: 900;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }

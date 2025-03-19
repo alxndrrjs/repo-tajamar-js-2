@@ -1,4 +1,3 @@
-
 // #region Global Vars
 // Variables globales
 let fechaSeleccionada, horaSeleccionada, mesaSeleccionada, numComensales;
@@ -8,36 +7,67 @@ $(function () {
   // Configuración del calendario
   $("#calendario").datepicker({
     inline: true,
-    dateFormat: 'yy-mm-dd',
+    dateFormat: "yy-mm-dd",
     onSelect: function (dateText) {
       fechaSeleccionada = dateText;
       mostrarHorarios(fechaSeleccionada);
-    }
+    },
   });
 
   // #region renderHorarios
   // Función para mostrar horarios disponibles
   function mostrarHorarios(fecha) {
-    const horariosDisponibles = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
-    const reservas = JSON.parse(localStorage.getItem('reservas')) || {};
+    // MostrarTitulo de la seccion horarios disponibles
+    const horaTopText = document.querySelector(".hora_top_text");
+    const mostrarHoraTitle = () => {
+      horaTopText.classList.remove("hidden");
+    };
+    mostrarHoraTitle();
 
-    $('#horarios').html('');
-    horariosDisponibles.forEach(hora => {
+    $("#horarios_disponibles").removeClass("hidden");
+
+    const horariosDisponibles = [
+      "12:00",
+      "13:00",
+      "14:00",
+      "15:00",
+      "16:00",
+      "17:00",
+      "18:00",
+      "19:00",
+      "20:00",
+      "21:00",
+    ];
+    const reservas = JSON.parse(localStorage.getItem("reservas")) || {};
+
+    $("#horarios").html("");
+    horariosDisponibles.forEach((hora) => {
       const clave = `${fecha} ${hora}`;
       const btn = $('<button class="horario">')
         .text(hora)
-        .prop('disabled', reservas[clave])  // Deshabilita los horarios ocupados
-        .addClass(reservas[clave] ? 'horario-reservado' : '')
+        .prop("disabled", reservas[clave]) // Deshabilita los horarios ocupados
+        .addClass(reservas[clave] ? "horario-reservado" : "")
         .click(function () {
           horaSeleccionada = hora;
-          $('#horariosDisponibles').hide();
+          $('.horario').removeClass("selected")
+          $(this).addClass("selected")
+          // $("#horarios_disponibles").hide();
           mostrarMesas();
         });
 
-      $('#horarios').append(btn);
+
+      const svgIcon = `
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 15.75C12.7279 15.75 15.75 12.7279 15.75 9C15.75 5.27208 12.7279 2.25 9 2.25C5.27208 2.25 2.25 5.27208 2.25 9C2.25 12.7279 5.27208 15.75 9 15.75Z" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.25 6V9.75H12" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      `;
+      btn.prepend(svgIcon)
+
+      $("#horarios").append(btn);
     });
 
-    $('#horariosDisponibles').removeClass('hidden');
+
   }
 
   // #region renderTables
@@ -47,74 +77,87 @@ $(function () {
       { id: 1, capacidad: 2 },
       { id: 2, capacidad: 2 },
       { id: 3, capacidad: 4 },
-      { id: 4, capacidad: 4 }
+      { id: 4, capacidad: 4 },
     ];
 
-    // 
-    const reservas = JSON.parse(localStorage.getItem('reservas')) || {};
-    $('#mesasDisponibles').html('');
+    //
+    const reservas = JSON.parse(localStorage.getItem("reservas")) || {};
+    $("#mesasDisponibles").html("");
 
-    mesas.forEach(mesa => {
+    // Mostrar seccion mesas
+    const mesasContainer = document.querySelector(".mesas_container");
+    const mostrarMesasContainer = () => {
+      mesasContainer.classList.remove("hidden");
+    };
+    mostrarMesasContainer();
+
+
+    mesas.forEach((mesa) => {
       const clave = `${fechaSeleccionada} ${horaSeleccionada} mesa ${mesa.id}`;
       const mesaBtn = $('<div class="mesa">')
         .text(`Mesa ${mesa.id}`)
-        .addClass(reservas[clave] ? 'mesa-ocupada' : '')
+        .addClass(reservas[clave] ? "mesa-ocupada" : "")
         .click(function () {
-
           // Si la mesa ya está ocupada (reservada), no hacer nada
           if (reservas[clave]) {
-            alert('Esta mesa ya está reservada.');
+            alert("Esta mesa ya está reservada.");
             return; // Sale de la función sin hacer nada
           }
 
           mesaSeleccionada = mesa.id;
-          $('#mesasDisponibles .mesa').removeClass('selected');
-          $(this).addClass('selected');
-          $('#numComensales').prop('disabled', false);
-          $('#siguienteMesa').removeClass('hidden');
+          $("#mesasDisponibles .mesa").removeClass("selected");
+          $(this).addClass("selected");
+          $("#numComensales").prop("disabled", false);
+          $("#siguienteMesa").removeClass("hidden");
 
+          // Mostrar seccion Comensales
+          const comensalesContainer = document.querySelector(".comensales_container");
+          const mostrarCoemensalesContainer = () => {
+            comensalesContainer.classList.remove("hidden");
+          };
+          mostrarCoemensalesContainer();
         });
 
-      $('#mesasDisponibles').append(mesaBtn);
+      $("#mesasDisponibles").append(mesaBtn);
     });
 
-    $('#seccion1').hide();
-    $('#seccion2').removeClass('hidden');
+    // $("#seccion1").hide();
+    $("#seccion2").removeClass("hidden");
   }
 
   // #region Comensales
   // Validación de comensales
-  $('#numComensales').on('input', function () {
+  $("#numComensales").on("input", function () {
     const num = $(this).val();
     if ((mesaSeleccionada === 1 || mesaSeleccionada === 2) && num > 2) {
-      alert('Número de comensales no válido para esta mesa');
-      $(this).val('');
-      $('#siguienteMesa').addClass('hidden');
+      alert("Número de comensales no válido para esta mesa");
+      $(this).val("");
+      $("#siguienteMesa").addClass("hidden");
     } else if ((mesaSeleccionada === 3 || mesaSeleccionada === 4) && num > 4) {
-      alert('Número de comensales no válido para esta mesa');
-      $(this).val('');
-      $('#siguienteMesa').addClass('hidden');
+      alert("Número de comensales no válido para esta mesa");
+      $(this).val("");
+      $("#siguienteMesa").addClass("hidden");
     } else {
-      $('#siguienteMesa').removeClass('hidden');
+      $("#siguienteMesa").removeClass("hidden");
     }
   });
 
   // #region saveData
   // Función para almacenar los datos y avanzar
-  $('#siguienteMesa').click(function () {
-    numComensales = $('#numComensales').val();
-    $('#seccion2').hide();
-    $('#seccion3').removeClass('hidden');
+  $("#siguienteMesa").click(function () {
+    numComensales = $("#numComensales").val();
+    $("#seccion2").hide();
+    $("#seccion3").removeClass("hidden");
   });
 
   // #region FinishReserve
   // Finalizar reserva
-  $('#formReserva').submit(function (e) {
+  $("#formReserva").submit(function (e) {
     e.preventDefault();
 
-    const nombre = $('#nombre').val();
-    const email = $('#email').val();
-    const telefono = $('#telefono').val();
+    const nombre = $("#nombre").val();
+    const email = $("#email").val();
+    const telefono = $("#telefono").val();
 
     const reserva = {
       fechaHora: `${fechaSeleccionada} ${horaSeleccionada}`,
@@ -122,17 +165,20 @@ $(function () {
       numComensales,
       nombre,
       email,
-      telefono
+      telefono,
     };
 
-    const reservas = JSON.parse(localStorage.getItem('reservas')) || {};
-    reservas[`${fechaSeleccionada} ${horaSeleccionada} mesa ${mesaSeleccionada}`] = reserva;
-    localStorage.setItem('reservas', JSON.stringify(reservas));
+    const reservas = JSON.parse(localStorage.getItem("reservas")) || {};
+    reservas[
+      `${fechaSeleccionada} ${horaSeleccionada} mesa ${mesaSeleccionada}`
+    ] = reserva;
+    localStorage.setItem("reservas", JSON.stringify(reservas));
 
-    alert('Reserva realizada con éxito');
-    $('#seccion3').hide();
-    $('#seccion1').removeClass('hidden');
-    $('#formReserva')[0].reset();
+    alert("Reserva realizada con éxito");
+    $("#seccion3").hide();
+    $("#seccion1").removeClass("hidden");
+    $('#horarios_disponibles').hide()
+    $("#formReserva")[0].reset();
     mesaSeleccionada = null;
   });
 });
@@ -140,7 +186,6 @@ $(function () {
 // =================================================================================================================================
 
 // Función para cargar las reservas desde localStorage
-
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     const calendar = document.getElementById("calendar");

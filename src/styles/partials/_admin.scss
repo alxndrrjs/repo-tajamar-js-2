@@ -23,8 +23,25 @@
             margin: 15px 0;
         }
 
-        td {
-            background-color: white;
+        .reserva_collapse {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #fff;
+            font-family: 'Be Vietnam Pro';
+
+            summary {
+                background-color: #f2f2f2;
+                padding: 10px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .reserva__detalles {
+                padding: 10px;
+                background: #fff;
+            }
         }
     }
 }

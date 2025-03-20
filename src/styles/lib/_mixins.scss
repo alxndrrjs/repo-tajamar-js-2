@@ -14,6 +14,11 @@
     font-weight: bold;
     font-size: 130px;
 }
+@mixin hero_title_mobile {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+}
 
 
 @mixin h1_desktop {
@@ -21,17 +26,32 @@
     font-weight: bold;
     font-size: 72px;
 }
+@mixin h1_mobile {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+}
 
 @mixin hero_p {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: normal;
     font-size: 16px;
 }
+@mixin hero_p_mobile {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+}
 
 @mixin description_cta {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: bold;
     font-size: 32px;
+}
+@mixin description_cta_mobile {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 @mixin header_link {

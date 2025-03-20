@@ -146,7 +146,7 @@ $(function () {
   // Función para almacenar los datos y avanzar
   $("#siguienteMesa").click(function () {
     numComensales = $("#numComensales").val();
-    $("#seccion2").hide();
+
     $("#seccion3").removeClass("hidden");
   });
 
@@ -177,6 +177,7 @@ $(function () {
     alert("Reserva realizada con éxito");
     $("#seccion3").hide();
     $("#seccion1").removeClass("hidden");
+    $("#seccion2").hide();
     $('#horarios_disponibles').hide()
     $("#formReserva")[0].reset();
     mesaSeleccionada = null;

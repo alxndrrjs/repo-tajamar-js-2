@@ -8,17 +8,25 @@
   background-color: #FFC77C;
 
   .reserva_title {
-    width: 1180px;
+    padding: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin-top: 4rem;
-
+    @media (max-width: 440px) {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
 
     h1 {
       @include h1_desktop;
       color: $color_title;
+
+      @media (max-width: 440px) {
+        @include h1_mobile;
+        line-height: 48px;
+      }
     }
   }
 
@@ -30,6 +38,10 @@
     align-items: center;
     width: 100%;
     background-color: #FFDDAE;
+
+    @media (max-width: 440px) {
+      flex-direction: column;
+    }
 
     .fecha {
       padding: 4rem 3rem;
@@ -156,8 +168,17 @@
   // SECCION 2
   #seccion2{
     width: 100%;
+    height: 500px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    @media (max-width: 440px) {
+      flex-direction: column;
+    }
+
+    &.hidden {
+      display: none;
+    }
 
     .mesas_container{
       padding: 6rem 3rem;
@@ -212,6 +233,12 @@
       &.hidden {
         display: none;
       }
+
+      #mesasDisponibles{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
     }
     // /mesas_container
 
@@ -227,6 +254,10 @@
       align-items: center;
   
       background-color: #FFD080;
+
+      @media (max-width: 440px) {
+        width: 100%;
+      }
 
       &.hidden {
         display: none;

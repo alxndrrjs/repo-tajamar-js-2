@@ -676,12 +676,19 @@ header {
   margin: 15px 0;
 }
 .main .main__content .reserva_collapse {
+  margin: 0 auto;
+  width: 600px;
   border: 1px solid #ddd;
   margin-bottom: 10px;
   border-radius: 5px;
   overflow: hidden;
   background: #fff;
   font-family: "Be Vietnam Pro";
+}
+@media (max-width: 480px) {
+  .main .main__content .reserva_collapse {
+    width: 100%;
+  }
 }
 .main .main__content .reserva_collapse summary {
   background-color: #f2f2f2;
@@ -690,8 +697,13 @@ header {
   cursor: pointer;
 }
 .main .main__content .reserva_collapse .reserva__detalles {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
   background: #fff;
+  text-align: left;
+  color: rgb(95, 95, 95);
 }
 
 .footer {

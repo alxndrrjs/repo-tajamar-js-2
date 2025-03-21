@@ -8,17 +8,29 @@
 @import 'partials/footer';
 @import 'partials/filtro';
 
-html {
+html, body {
     scroll-behavior: smooth;
     scrollbar-color: $color_primary $color_primary_dark;
+
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
 }
 
 
 body {
-    padding: 0;
-    margin: 0;
+
     font-family: $font__source;
     overflow-x: hidden;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+
 }
 
 strong {
@@ -29,4 +41,5 @@ strong {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // border: 1px solid salmon;
 }

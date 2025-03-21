@@ -51,6 +51,7 @@ $(function () {
     },
   });
 
+
   // #region renderHorarios
   // Función para mostrar horarios disponibles
   function mostrarHorarios(fecha) {
@@ -217,11 +218,12 @@ $(function () {
     localStorage.setItem("reservas", JSON.stringify(reservas));
 
     alert("Reserva realizada con éxito");
-    $("#seccion3").hide();
+    $("#seccion3").addClass("hidden");
     $("#seccion1").removeClass("hidden");
-    $("#seccion2").hide();
-    $('#horarios_disponibles').hide()
+    $("#seccion2").addClass("hidden");
+    $('#horarios_disponibles').addClass("hidden")
     $("#formReserva")[0].reset();
+    $("#numComensales").val('');
     mesaSeleccionada = null;
   });
 });

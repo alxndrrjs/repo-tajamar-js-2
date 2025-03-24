@@ -2,6 +2,42 @@
 // Variables globales
 let fechaSeleccionada, horaSeleccionada, mesaSeleccionada, numComensales;
 
+
+// scroll 
+const scrollIntoHorarios = () => {
+  const horariosSection = document.querySelector("#horarios_disponibles")
+  horariosSection.scrollIntoView({
+    behavior: "smooth",
+    block: 'nearest'
+  })
+}
+const scrollIntoMesas = () => {
+  const mesasSection = document.querySelector(".mesas_container")
+  mesasSection.scrollIntoView({
+    behavior: "smooth",
+    block: 'nearest'
+  })
+}
+
+const scrollIntoComensales = () => {
+  const ComensalesSection = document.querySelector(".comensales_container")
+  ComensalesSection.scrollIntoView({
+    behavior: "smooth",
+    block: 'nearest'
+  })
+}
+const scrollIntoDataForm = () => {
+  const DataFormSection = document.querySelector("#seccion3")
+  DataFormSection.scrollIntoView({
+    behavior: "smooth",
+    block: 'nearest'
+  })
+}
+
+
+
+
+
 // #region Calendar config
 $(function () {
   // Configuración del calendario
@@ -11,8 +47,10 @@ $(function () {
     onSelect: function (dateText) {
       fechaSeleccionada = dateText;
       mostrarHorarios(fechaSeleccionada);
+      scrollIntoHorarios()
     },
   });
+
 
   // #region renderHorarios
   // Función para mostrar horarios disponibles
@@ -53,6 +91,7 @@ $(function () {
           $(this).addClass("selected")
           // $("#horarios_disponibles").hide();
           mostrarMesas();
+          scrollIntoMesas()
         });
 
 
@@ -73,6 +112,8 @@ $(function () {
   // #region renderTables
   // Función para mostrar las mesas disponibles
   function mostrarMesas() {
+
+
     const mesas = [
       { id: 1, capacidad: 2 },
       { id: 2, capacidad: 2 },
@@ -116,6 +157,7 @@ $(function () {
             comensalesContainer.classList.remove("hidden");
           };
           mostrarCoemensalesContainer();
+          scrollIntoComensales()
         });
 
       $("#mesasDisponibles").append(mesaBtn);
@@ -146,8 +188,9 @@ $(function () {
   // Función para almacenar los datos y avanzar
   $("#siguienteMesa").click(function () {
     numComensales = $("#numComensales").val();
-    $("#seccion2").hide();
+
     $("#seccion3").removeClass("hidden");
+    scrollIntoDataForm()
   });
 
   // #region FinishReserve
@@ -175,10 +218,12 @@ $(function () {
     localStorage.setItem("reservas", JSON.stringify(reservas));
 
     alert("Reserva realizada con éxito");
-    $("#seccion3").hide();
+    $("#seccion3").addClass("hidden");
     $("#seccion1").removeClass("hidden");
-    $('#horarios_disponibles').hide()
+    $("#seccion2").addClass("hidden");
+    $('#horarios_disponibles').addClass("hidden")
     $("#formReserva")[0].reset();
+    $("#numComensales").val('');
     mesaSeleccionada = null;
   });
 });
